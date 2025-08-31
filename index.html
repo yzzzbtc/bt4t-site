@@ -3,27 +3,29 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>BT4T — AI Trading Journal</title>
-  <meta name="description" content="BT4T is the pro AI trading journal built by traders for traders: real exchange connectors, market context engine, AI insights & heuristics, discipline tools, and performance analytics."/>
-  <meta property="og:title" content="BT4T — AI Trading Journal" />
-  <meta property="og:description" content="Auto-sync trades. Market-aware AI insights. Rituals and analytics that turn discipline into edge." />
+  <title>BT4T — Coming Soon</title>
+  <meta name="description" content="BT4T is the pro AI trading journal built by traders for traders. Automated trade ingestion, market context, AI insights & heuristics, discipline systems, and performance analytics—so you compound edge, not mistakes."/>
+  <meta property="og:title" content="BT4T — Coming Soon" />
+  <meta property="og:description" content="Pro AI trading journal: exchange sync, market context, AI insights, discipline, analytics." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="/og-bt4t.png" />
   <meta name="theme-color" content="#0a0f12" />
-  <link rel="icon" href="/favicon.svg" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230a0f12'/%3E%3Cpath d='M14 42V22h12.5c4.8 0 7.5 2.4 7.5 6 0 3-1.9 4.9-4.3 5.6 2.9.7 5.3 2.7 5.3 6.3 0 4.2-3 6.1-8 6.1H14zm7-12.8h5.1c1.9 0 3.1-1 3.1-2.8s-1.2-2.8-3.1-2.8H21v5.6zm0 13h6c2.4 0 3.9-1.1 3.9-3.2 0-2-1.5-3.2-3.9-3.2H21v6.4z' fill='%23a7f3d0'/%3E%3Cpath d='M48.5 22c0-1.1.9-2 2-2h1.5c1.1 0 2 .9 2 2v20c0 1.1-.9 2-2 2H50.5c-1.1 0-2-.9-2-2v-8.5H40c-1.1 0-2-.9-2-2v-1c0-1.1.9-2 2-2h8.5V22z' fill='%2334d399'/%3E%3C/svg%3E" />
   <style>
     :root{
-      --bg: #0a0f12; --panel:#0f1419; --muted:#9aa4ad; --text:#e6edf3; --brand:#06b6d4; --brand-2:#34d399; --ring:rgba(6,182,212,.35);
+      --bg:#0a0f12; --panel:#0f1419; --muted:#9aa4ad; --text:#e6edf3; --brand:#34d399; --brand-2:#06b6d4; --ring:rgba(52,211,153,.35);
     }
     *{box-sizing:border-box}
     html,body{height:100%}
     body{
       margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
-      color:var(--text); background: radial-gradient(1100px 700px at 70% -10%, rgba(6,182,212,.12), transparent 65%),
-                 radial-gradient(900px 700px at -10% 110%, rgba(52,211,153,.1), transparent 60%), var(--bg);
+      color:var(--text);
+      background: radial-gradient(1200px 800px at 70% -10%, rgba(6,182,212,.12), transparent 65%),
+                 radial-gradient(800px 600px at -10% 110%, rgba(52,211,153,.1), transparent 60%),
+                 var(--bg);
       display:flex; align-items:center; justify-content:center; padding:32px;
     }
-    .wrap{width:min(1100px,100%);} 
+    .wrap{width:min(1120px,100%);} 
     .card{
       background: color-mix(in oklab, var(--panel) 90%, transparent);
       border:1px solid rgba(255,255,255,.06);
@@ -31,35 +33,40 @@
       backdrop-filter: blur(10px);
     }
     header{display:flex; align-items:center; justify-content:space-between; gap:16px; margin-bottom:18px}
-    .logo{display:flex; align-items:center; gap:10px; text-decoration:none; color:inherit}
-    .wordmark{font-weight:800; letter-spacing:.4px}
+    .logo{display:flex; align-items:center; gap:12px; text-decoration:none; color:inherit}
+    .logo-img{height:28px; max-height:28px; width:auto; object-fit:contain} /* force resize for your PNG */
+    .wordmark{font-weight:700; letter-spacing:.5px}
     .tag{border:1px solid rgba(255,255,255,.1); color:var(--muted); padding:6px 10px; border-radius:999px; font-size:12px}
-    .hero{display:grid; grid-template-columns: 1.2fr .8fr; gap:28px; align-items:start}
+    .hero{display:grid; grid-template-columns: 1.2fr .8fr; gap:28px; align-items:center}
     @media (max-width:900px){ .hero{grid-template-columns:1fr} }
-    .logo-img{height:28px; width:auto; display:block}
     h1{font-size: clamp(28px, 5vw, 48px); line-height:1.05; margin:6px 0 14px}
     p.lead{font-size: clamp(15px, 2.2vw, 18px); color:#c7d0d9; margin:0 0 22px}
+    .points{display:grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap:14px; margin-top:18px}
+    @media (max-width:700px){.points{grid-template-columns:1fr}}
+    .pill{display:flex; gap:10px; align-items:flex-start; background:#0b1217; border:1px solid rgba(255,255,255,.06); padding:10px 12px; border-radius:12px}
+    .pill svg{flex:0 0 18px; opacity:.9}
     .glass{background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02)); border:1px solid rgba(255,255,255,.08); border-radius:16px; padding:16px}
     form{display:flex; gap:10px; margin-top:10px}
     input[type=email]{flex:1; min-width:160px; border-radius:12px; border:1px solid rgba(255,255,255,.12); background:#0a0f12; color:var(--text); padding:14px 14px; outline:none}
     input[type=email]:focus{border-color:var(--brand); box-shadow:0 0 0 6px var(--ring)}
     button{border:0; border-radius:12px; padding:14px 16px; font-weight:600; cursor:pointer; color:#06231a; background: linear-gradient(135deg, var(--brand), var(--brand-2)); box-shadow:0 10px 24px rgba(6,182,212,.35)}
     .subcopy{font-size:12px; color:var(--muted); margin-top:6px}
-    .right{ display:grid; gap:14px }
-    .section{margin-top:24px}
-    .grid{display:grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap:14px}
-    @media (max-width:900px){ .grid{grid-template-columns:1fr} }
-    .tile{background:#0b1217; border:1px solid rgba(255,255,255,.06); padding:14px; border-radius:12px}
-    .tile h3{margin:0 0 6px; font-size:16px}
-    .tile p{margin:0; color:#c7d0d9; font-size:14px}
-    .bullets{margin:8px 0 0 0; padding-left:18px; color:#c7d0d9; font-size:14px}
-    .bullets li{margin:4px 0}
-    details{background:#0b1217; border:1px solid rgba(255,255,255,.06); padding:14px; border-radius:12px}
-    summary{cursor:pointer; font-weight:600}
-    .why{display:grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap:14px}
-    @media (max-width:900px){ .why{grid-template-columns:1fr} }
-    .why .point{display:flex; gap:12px; align-items:flex-start; background:#0b1217; border:1px solid rgba(255,255,255,.06); padding:12px; border-radius:12px}
-    .why svg{flex:0 0 18px; opacity:.9}
+
+    /* Right-side feature rotator (replaces the fake metrics) */
+    .right{
+      border-radius:16px; border:1px dashed rgba(255,255,255,.12); padding:18px; display:grid; gap:12px;
+      background:linear-gradient(180deg, rgba(52,211,153,.06), rgba(6,182,212,.06));
+      cursor:pointer;
+    }
+    .feat{display:none; background: rgba(0,0,0,.25); border:1px solid rgba(255,255,255,.06); padding:12px 14px; border-radius:12px}
+    .feat.active{display:block}
+    .feat strong{display:block; margin-bottom:4px}
+    .controls{display:flex; align-items:center; justify-content:space-between}
+    .nav{border:1px solid rgba(255,255,255,.18); background:#0a0f12; color:#e6edf3; border-radius:10px; padding:6px 10px; cursor:pointer}
+    .dots{display:flex; gap:6px}
+    .dot{width:6px; height:6px; border-radius:999px; background:rgba(255,255,255,.25)}
+    .dot.active{background:#34d399}
+    .countdown{font-variant-numeric: tabular-nums; letter-spacing:.5px}
     footer{display:flex; justify-content:space-between; gap:18px; align-items:center; margin-top:22px; color:var(--muted); font-size:13px}
     footer a{color:inherit; text-decoration:none}
     .links{display:flex; gap:14px; align-items:center}
@@ -70,7 +77,7 @@
     <div class="card">
       <header>
         <a class="logo" href="#" aria-label="BT4T home">
-          <img class="logo-img" src="/logo.png" alt="BT4T logo" />
+          <img src="/logo.png" alt="BT4T" class="logo-img" />
           <span class="wordmark">BT4T</span>
         </a>
         <span class="tag">By Traders · For Traders</span>
@@ -78,125 +85,53 @@
 
       <section class="hero">
         <div>
-          <h1>AI trading journal with market context, insights & discipline—built to compound edge.</h1>
-          <p class="lead">Auto‑sync real fills from Hyperliquid, Binance, and Bybit. Get market‑aware AI reviews and heuristics. Lock in habits with pre/post‑trade rituals and performance analytics.</p>
+          <h1>AI Trading Journal that actually makes you better.</h1>
+          <p class="lead">Automated exchange sync. Market context engine. AI insights & heuristics. Pre-/post-trade rituals. Performance analytics. Built to turn discipline into compounding edge.</p>
 
           <div class="glass">
             <form id="waitlist" action="https://formspree.io/f/xyyyaaaa" method="POST" onsubmit="return submitForm(event)">
               <input type="email" name="email" placeholder="Enter your email" required aria-label="Email address" />
               <button type="submit">Join the waitlist</button>
             </form>
-            <div class="subcopy">Early access invites only. Swap the endpoint later if you’re self‑hosting.</div>
+            <div class="subcopy">No spam. Early access invites only. <span class="countdown" id="count">Launch ETA: —</span></div>
           </div>
 
-          <div class="section">
-            <div class="grid">
-              <div class="tile">
-                <h3>Data ingestion</h3>
-                <ul class="bullets">
-                  <li>Exchange connectors: Hyperliquid / Binance / Bybit</li>
-                  <li>Real fills, fees, and PnL (no fantasy data)</li>
-                  <li>Manual journal entries supported</li>
-                </ul>
-              </div>
-              <div class="tile">
-                <h3>Market context engine</h3>
-                <ul class="bullets">
-                  <li>Volatility & trend regime snapshots per session/day</li>
-                  <li>Context tags (e.g., session ranges, funding bias, BTC correlation)</li>
-                  <li>Attaches context to each trade for review</li>
-                </ul>
-              </div>
-              <div class="tile">
-                <h3>AI insights & heuristics</h3>
-                <ul class="bullets">
-                  <li>Post‑trade reviews & leak detection</li>
-                  <li>Heuristics library: repeatable setups & anti‑patterns</li>
-                  <li>Personalized prompts & playbook suggestions</li>
-                </ul>
-              </div>
-              <div class="tile">
-                <h3>Discipline & rituals</h3>
-                <ul class="bullets">
-                  <li>Pre‑/post‑trade checklists and guardrails</li>
-                  <li>Risk caps, cooldowns, and session rules</li>
-                  <li>Nudges that prevent avoidable Ls</li>
-                </ul>
-              </div>
-              <div class="tile">
-                <h3>Performance analytics</h3>
-                <ul class="bullets">
-                  <li>Win‑rate, expectancy, MFE/MAE, R‑multiples</li>
-                  <li>Breakdowns by symbol, setup, timeframe, session</li>
-                  <li>Equity curves & parameter heatmaps</li>
-                </ul>
-              </div>
-              <div class="tile">
-                <h3>Journal & replay</h3>
-                <ul class="bullets">
-                  <li>Manual notes, screenshots, and tags</li>
-                  <li>Trade replay with AI commentary</li>
-                  <li>Exports & private API access</li>
-                </ul>
-              </div>
+          <div class="points">
+            <div class="pill">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M12 2 2 7l10 5 10-5-10-5Zm0 7L2 4v13l10 5 10-5V4L12 9Z" opacity=".7"/></svg>
+              <div><strong>Automated ingestion</strong><br/><span style="color:var(--muted)">Hyperliquid / Binance / Bybit connectors. Real fills, fees & PnL—plus manual entries.</span></div>
             </div>
-          </div>
-
-          <div class="section">
-            <h2 style="margin:0 0 10px; font-size:20px">Why BT4T wins</h2>
-            <div class="why">
-              <div class="point">
-                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>
-                <div><strong>Market‑aware AI, not generic tips</strong><br/><span style="color:#c7d0d9">Insights conditioned on regime, session and volatility—so feedback matches the tape you actually traded.</span></div>
-              </div>
-              <div class="point">
-                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>
-                <div><strong>Heuristics that compound</strong><br/><span style="color:#c7d0d9">Library of setups and anti‑patterns personalized to you; the system remembers what pays and what bleeds.</span></div>
-              </div>
-              <div class="point">
-                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>
-                <div><strong>Discipline built‑in</strong><br/><span style="color:#c7d0d9">Pre/post‑trade rituals, risk caps, cooldowns, and guardrails—FOMO killers that prevent avoidable Ls.</span></div>
-              </div>
-              <div class="point">
-                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>
-                <div><strong>Real data, real attribution</strong><br/><span style="color:#c7d0d9">Direct connectors record fills, fees and PnL; analytics show where edge lives by symbol, timeframe and session.</span></div>
-              </div>
-              <div class="point">
-                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>
-                <div><strong>Built for iteration</strong><br/><span style="color:#c7d0d9">Review → hypothesis → ritual tweak loops designed to shorten time‑to‑improvement.</span></div>
-              </div>
-              <div class="point">
-                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>
-                <div><strong>Yours, not social</strong><br/><span style="color:#c7d0d9">Private by default with exports and a clean API—this is your edge notebook, not another feed.</span></div>
-              </div>
+            <div class="pill">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M3 12a9 9 0 1 1 18 0 9 9 0 0 1-18 0Zm9-6v6l4 2"/></svg>
+              <div><strong>AI insights & heuristics</strong><br/><span style="color:var(--muted)">Leak detection, setups & anti-patterns, and playbook prompts.</span></div>
             </div>
-          </div>
-
-          <div class="section">
-            <details>
-              <summary>Roadmap preview</summary>
-              <ul class="bullets">
-                <li>Mobile‑first journal flows and push reminders</li>
-                <li>Deeper context: dominance, liquidity pockets, session stats</li>
-                <li>Educational “micro‑lessons” that tie into your live trading</li>
-              </ul>
-            </details>
+            <div class="pill">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M12 21c4.97 0 9-3.582 9-8s-4.03-8-9-8S3 8.582 3 13s4.03 8 9 8Zm-2-9h4v2h-4v-2Zm6-4H8v2h8V8Z"/></svg>
+              <div><strong>Discipline & rituals</strong><br/><span style="color:var(--muted)">Pre-/post-trade checklists, risk caps, cooldowns, guardrails.</span></div>
+            </div>
+            <div class="pill">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M11 21V3h2v18h-2Zm7-4V7h2v10h-2ZM4 17V9h2v8H4Z"/></svg>
+              <div><strong>Performance analytics</strong><br/><span style="color:var(--muted)">Win-rate, expectancy, MFE/MAE, R-multiples, equity curves.</span></div>
+            </div>
           </div>
         </div>
 
-        <aside class="right" aria-label="Preview">
-          <div class="glass">
-            <strong>How BT4T is different</strong>
-            <ul class="bullets">
-              <li>Real exchange data + market context, not just screenshots</li>
-              <li>AI that understands regime & session, not generic tips</li>
-              <li>Discipline systems baked in (rituals, guardrails, anti‑FOMO)</li>
-            </ul>
+        <!-- Right: feature rotator (click to cycle; auto-rotates) -->
+        <aside class="right" aria-label="Key features" onclick="rot(1)">
+          <div id="features">
+            <div class="feat active"><strong>Market context engine</strong><div>Regime / session / volatility snapshots bound to each trade.</div></div>
+            <div class="feat"><strong>AI insights & heuristics</strong><div>Post-mortems, leak detection, setups & anti-patterns that compound.</div></div>
+            <div class="feat"><strong>Discipline systems</strong><div>Checklists, risk caps, cooldowns, and session guardrails to kill FOMO.</div></div>
+            <div class="feat"><strong>Performance analytics</strong><div>Breakdowns by symbol, setup, timeframe, session—find where edge lives.</div></div>
+            <div class="feat"><strong>Journal & replay</strong><div>Notes, screenshots, trade replay with AI commentary; exports & API.</div></div>
+            <div class="feat"><strong>Connectors</strong><div>Hyperliquid · Binance · Bybit. Real fills, fees & PnL—no fantasy data.</div></div>
           </div>
-          <div class="glass">
-            <strong>Connectors</strong>
-            <p class="subcopy">Hyperliquid · Binance · Bybit (more soon)</p>
+          <div class="controls">
+            <button class="nav" type="button" aria-label="Previous" onclick="event.stopPropagation(); rot(-1)">‹</button>
+            <div class="dots" id="dots"></div>
+            <button class="nav" type="button" aria-label="Next" onclick="event.stopPropagation(); rot(1)">›</button>
           </div>
+          <div class="subcopy">Click to cycle · auto-rotates</div>
         </aside>
       </section>
 
@@ -214,7 +149,22 @@
   </main>
 
   <script>
+    // Countdown
+    const launchDate = new Date(Date.UTC(2025, 9, 15, 12, 0, 0));
+    const windowEnd  = new Date(Date.UTC(2025, 9, 31, 23, 59, 59));
+    function fmtDur(ms){ const s=Math.max(0,Math.floor(ms/1000));
+      const d=Math.floor(s/86400), h=Math.floor((s%86400)/3600), m=Math.floor((s%3600)/60), sec=s%60;
+      return `${d}d ${h}h ${m}m ${sec}s`;
+    }
+    function tick(){
+      const now=new Date(), toLaunch=launchDate-now;
+      const el=document.getElementById('count'); if(el) el.textContent = toLaunch>0 ? `Launch ETA: ${fmtDur(toLaunch)}` : 'Launching soon';
+      const w=document.getElementById('window'); if(w) w.textContent = windowEnd>now ? fmtDur(windowEnd-now) : '—';
+    }
+    setInterval(tick, 1000); tick();
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Waitlist form UX
     async function submitForm(e){
       const form = e.target; e.preventDefault();
       const btn = form.querySelector('button');
@@ -228,6 +178,34 @@
       finally{ setTimeout(()=>{btn.disabled=false; btn.textContent=prev;}, 2500); }
       return false;
     }
+
+    // Right feature rotator
+    const feats = Array.from(document.querySelectorAll('#features .feat'));
+    const dotsWrap = document.getElementById('dots');
+    let idx = 0, timer;
+    function renderDots(){
+      dotsWrap.innerHTML = '';
+      feats.forEach((_,i)=>{
+        const b = document.createElement('span');
+        b.className = 'dot' + (i===idx?' active':'');
+        b.role = 'button'; b.ariaLabel = `Go to feature ${i+1}`;
+        b.addEventListener('click', (ev)=>{ ev.stopPropagation(); go(i); });
+        dotsWrap.appendChild(b);
+      });
+    }
+    function go(i){
+      feats[idx].classList.remove('active');
+      idx = (i + feats.length) % feats.length;
+      feats[idx].classList.add('active');
+      renderDots();
+      resetTimer();
+    }
+    function rot(step){ go(idx + step); }
+    function resetTimer(){
+      clearInterval(timer);
+      timer = setInterval(()=> rot(1), 5000);
+    }
+    renderDots(); resetTimer();
   </script>
 </body>
 </html>
